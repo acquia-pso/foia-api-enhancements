@@ -58,6 +58,7 @@ permissions:
   - 'use text format rich_text'
   - 'view agency_component revisions'
   - 'view all foia personnel revisions'
+  - 'view any unpublished total_annual_data content'
   - 'view any webform submission'
   - 'view field_complex_average_days'
   - 'view field_complex_highest_days'
