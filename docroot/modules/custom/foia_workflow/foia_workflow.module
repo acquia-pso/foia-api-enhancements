@@ -5,8 +5,9 @@
  * FOIA Workflow module.
  */
 
-use Drupal\core\Access\AccessResult;
 use Drupal\node\NodeInterface;
+use Drupal\core\Session\AccountInterface;
+use Drupal\core\Access\AccessResult;
 
 /**
  * Implements hook_node_access().
