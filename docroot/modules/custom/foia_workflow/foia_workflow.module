@@ -7,11 +7,12 @@
 
 use Drupal\core\Access\AccessResult;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Session\AccountProxy;
 
 /**
  * Implements hook_node_access().
  */
-function foia_workflow_node_access(NodeInterface $node, $op, AccountInterface $account) {
+function foia_workflow_node_access(NodeInterface $node, $op, AccountProxy $account) {
   $type = $node->bundle();
   $workflow_state = $node->get('moderation_state')->getString();
   $is_report_type = (bool) ($type == 'total_annual_data');
