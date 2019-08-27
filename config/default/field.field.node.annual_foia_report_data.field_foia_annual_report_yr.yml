@@ -1,15 +1,15 @@
-uuid: b1af7f8f-5cda-490f-863e-d5f24273b0f5
+uuid: 9d66a8e6-bc68-49cc-a149-e24037455b15
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_overall_vb3_ex_7
+    - field.storage.node.field_foia_annual_report_yr
     - node.type.annual_foia_report_data
-id: node.annual_foia_report_data.field_overall_vb3_ex_7
-field_name: field_overall_vb3_ex_7
+id: node.annual_foia_report_data.field_foia_annual_report_yr
+field_name: field_foia_annual_report_yr
 entity_type: node
 bundle: annual_foia_report_data
-label: 'Agency Overall Ex. 7'
+label: 'FOIA Annual Report Year'
 description: ''
 required: false
 translatable: false
