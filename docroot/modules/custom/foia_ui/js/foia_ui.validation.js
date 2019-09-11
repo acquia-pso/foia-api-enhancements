@@ -17,6 +17,18 @@
         return this.optional(element) || value <= sum;
       }, "Must equal less than equal a sum of other fields.");
 
+      // lessThanEqualComp
+      jQuery.validator.addMethod("lessThanEqualComp", function(value, element, params) {
+        var elementAgencyComponent = $(element).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
+        for (var i = 0; i < params.length; i++){
+          var paramAgencyComponent = $(params[i]).parents('.paragraphs-subform').find("select[name*='field_agency_component']").val();
+          if (paramAgencyComponent == elementAgencyComponent) {
+            var target = Number($( params[i] ).val());
+            return this.optional(element) || value <= target;
+          }
+        }
+      }, "Must be greater than or equal to a field."),
+
       /**
        * Form validation call
        */
@@ -135,6 +147,16 @@
         equalTo: "#edit-field-overall-vib-total-0-value",
         messages: {
           equalTo: "Must match VI.B. Agency Overall Total"
+        }
+      });
+
+      // VI.C.(4) Agency Overall Median Number of Days
+      $( "input[name*='field_admin_app_vic4']").filter("input[name*='field_low_num_days']").rules( "add", {
+        lessThanEqualComp: $("input[name*='field_admin_app_vic4']").filter("input[name*='field_high_num_days']"),
+        range: [0.000001, 0.999999],
+        messages: {
+          lessThanEqualComp: "Must be less than or equal to the to the highest number of days.",
+          range: "Entries should be <1 and not 0"
         }
       });
     }
