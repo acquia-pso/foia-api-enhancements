@@ -150,7 +150,7 @@
         }
       });
 
-      // VI.C.(4) Agency Overall Median Number of Days
+      // VI.C.(4) Administrative Appeals
       $( "input[name*='field_admin_app_vic4']").filter("input[name*='field_low_num_days']").rules( "add", {
         lessThanEqualComp: $("input[name*='field_admin_app_vic4']").filter("input[name*='field_high_num_days']"),
         range: [0.000001, 0.999999],
