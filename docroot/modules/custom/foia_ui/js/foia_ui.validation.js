@@ -382,14 +382,14 @@
       });
 
       // Formatting and validity of date fields that accept text.
-      $("input[id^='edit-field-overall-vic5-date']")
-          .add("input[id^='edit-field-overall-viie-date']")
-          .add("input[id^='edit-field-overall-xiic-date']")
-          .add("input[id^='edit-field-admin-app-vic5-0-subform-field-date-']")
-          .add("input[id^='edit-field-admin-app-viie-0-subform-field-date-']")
-          .add("input[id^='edit-field-foia-xiic-0-subform-field-date-']")
+      $("input[name^='field_admin_app_vic5']").filter('input[name*="field_date_"]')
+          .add("input[name^='field_admin_app_viie']").filter('input[name*="field_date_"]')
+          .add("input[name^='field_foia_xiic']").filter('input[name*="field_date_"]')
+          .add("input[name^='field_overall_vic5_date']")
+          .add("input[name^='field_overall_viie_date']")
+          .add("input[name^='field_overall_xiic_date']")
           .filter('.form-text')
-          .each(function() {
+          .each(function () {
             $(this).rules("add", {
               isoDateFormattedOrNA: true,
               isoDateStringIsValid: true,
