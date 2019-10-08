@@ -381,12 +381,20 @@
         });
       });
 
-      $("input[name*='_date_']").filter("input[name^='field_overall']").each(function() {
-        $(this).rules("add", {
-          isoDateFormattedOrNA: true,
-          isoDateStringIsValid: true,
-        });
-      });
+      // Formatting and validity of date fields that accept text.
+      $("input[id^='edit-field-overall-vic5-date']")
+          .add("input[id^='edit-field-overall-viie-date']")
+          .add("input[id^='edit-field-overall-xiic-date']")
+          .add("input[id^='edit-field-admin-app-vic5-0-subform-field-date-']")
+          .add("input[id^='edit-field-admin-app-viie-0-subform-field-date-']")
+          .add("input[id^='edit-field-foia-xiic-0-subform-field-date-']")
+          .filter('.form-text')
+          .each(function() {
+            $(this).rules("add", {
+              isoDateFormattedOrNA: true,
+              isoDateStringIsValid: true,
+            });
+          });
 
        // V.A. FOIA Requests
       $( "input[name*='field_foia_requests_va']").filter("input[name*='field_req_processed_yr']").each(function() {
