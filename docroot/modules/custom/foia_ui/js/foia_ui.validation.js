@@ -904,80 +904,20 @@
         }
       });
 
-      // For the next 9 rules, each is comparing the value to the one lower
-      // than it ( i.e., field 10 is less than field 9, field 9 is less than
-      // field 8, etc).
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 10th
-      $( "#edit-field-overall-viie-num-days-10-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-9-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"9th\"."
-        }
-      });
-
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 9th
-      $( "#edit-field-overall-viie-num-days-9-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-8-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"8th\"."
-        }
-      });
-
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 8th
-      $( "#edit-field-overall-viie-num-days-8-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-7-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"7th\"."
-        }
-      });
-
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 7th
-      $( "#edit-field-overall-viie-num-days-7-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-6-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"6th\"."
-        }
-      });
-
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 6th
-      $( "#edit-field-overall-viie-num-days-6-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-5-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"5th\"."
-        }
-      });
-
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 5th
-      $( "#edit-field-overall-viie-num-days-5-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-4-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"4th\"."
-        }
-      });
-
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 4th
-      $( "#edit-field-overall-viie-num-days-4-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-3-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"3d\"."
-        }
-      });
-
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 3d
-      $( "#edit-field-overall-viie-num-days-3-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-2-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"2d\"."
-        }
-      });
-
-      // VII.E. PENDING REQUESTS -- TEN OLDEST PENDING PERFECTED REQUESTS / 2d
-      $( "#edit-field-overall-viie-num-days-2-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-viie-num-days-1-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"Oldest\"."
-        }
-      });
+      // VII.E. PENDING REQUESTS / 2nd - 10th
+      // Iterate over the the 2nd to 10th oldest overall pending requests,
+      // comparing the value to the one before it, e.g. value of 9th <= 8th.
+      for (var i = 2; i <= 10; i++){
+        var prior = oldestOrdinal(i - 1),
+            inputId = "#edit-field-overall-viie-num-days-" + i + "-0-value",
+            comparisonId = "#edit-field-overall-viie-num-days-" + (i - 1) + "-0-value";
+        $(inputId).rules( "add", {
+          lessThanEqualToNA: $(comparisonId),
+          messages: {
+            lessThanEqualToNA: "This should be less than or equal to the number of days for <em>" + prior + "</em>."
+          }
+        });
+      }
 
       // VII.E. PENDING REQUESTS - Oldest Days component/ 2nd-10th
       // For each Agency/Component, iterate over 2nd to 10th Oldest days
