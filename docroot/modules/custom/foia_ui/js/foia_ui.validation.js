@@ -1044,80 +1044,22 @@
         });
       });
 
-      // For the next 9 rules, each is comparing the value to the one lower
-      // than it ( i.e., field 10 is less than field 9, field 9 is less than
-      // field 8, etc).
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 10th
-      $( "#edit-field-overall-xiic-num-days-10-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-9-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"9th\"."
-        }
-      });
-
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 9th
-      $( "#edit-field-overall-xiic-num-days-9-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-8-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"8th\"."
-        }
-      });
-
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 8th
-      $( "#edit-field-overall-xiic-num-days-8-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-7-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"7th\"."
-        }
-      });
-
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 7th
-      $( "#edit-field-overall-xiic-num-days-7-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-6-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"6th\"."
-        }
-      });
-
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 6th
-      $( "#edit-field-overall-xiic-num-days-6-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-5-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"5th\"."
-        }
-      });
-
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 5th
-      $( "#edit-field-overall-xiic-num-days-5-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-4-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"4th\"."
-        }
-      });
-
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 4th
-      $( "#edit-field-overall-xiic-num-days-4-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-3-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"3d\"."
-        }
-      });
-
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 3d
-      $( "#edit-field-overall-xiic-num-days-3-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-2-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"2d\"."
-        }
-      });
-
-      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY / 2d
-      $( "#edit-field-overall-xiic-num-days-2-0-value").rules( "add", {
-        lessThanEqualToNA: "#edit-field-overall-xiic-num-days-1-0-value",
-        messages: {
-          lessThanEqualToNA: "This should be less than or equal to the number of days for \"Oldest\"."
-        }
-      });
+      // XII.C. CONSULTATIONS ON FOIA REQUESTS -- TEN OLDEST CONSULTATIONS RECEIVED FROM OTHER AGENCIES AND PENDING AT THE AGENCY
+      // 2nd - 10th
+      // Iterate over the the 2nd to 10th overall oldest consultations
+      // received, comparing the value to the one before it,
+      // e.g. value of 9th <= 8th.
+      for (var i = 2; i <= 10; i++){
+        var prior = oldestOrdinal(i - 1),
+            inputId = "#edit-field-overall-xiic-num-days-" + i + "-0-value",
+            comparisonId = "#edit-field-overall-xiic-num-days-" + (i - 1) + "-0-value";
+        $(inputId).rules( "add", {
+            lessThanEqualToNA: $(comparisonId),
+            messages: {
+              lessThanEqualToNA: "This should be less than or equal to the number of days for <em>" + prior + "</em>."
+            }
+          });
+      }
 
       // XII.C. FOIA Requests and Administrative Appeals - Oldest Days component/ 2nd-10th
       // For each Agency/Component, iterate over 2nd to 10th Oldest days
