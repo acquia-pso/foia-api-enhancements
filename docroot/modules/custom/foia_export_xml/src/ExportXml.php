@@ -5,6 +5,7 @@ namespace Drupal\foia_export_xml;
 use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Entity\ContentEntityBase;
 
 /**
  * Class ExportXml.
@@ -628,7 +629,10 @@ EOS;
       // Add quantity for each denial reason.
       $this->addLabeledQuantity($this->node, $item, 'foia:NonExemptionDenial', 'foia:NonExemptionDenialReasonCode', 'foia:NonExemptionDenialQuantity', $overall_reason_map);
       // Add Request Disposition Total.
-      $this->addElementNs('foia:RequestDispositionTotalQuantity', $item, $component->get('field_total')->value);
+      $total = !is_null($component) && is_a($component, ContentEntityBase::class)
+        ? $component->get('field_total')->value
+        : NULL;
+      $this->addElementNs('foia:RequestDispositionTotalQuantity', $item, $total);
     }
 
     $this->addProcessingAssociations($component_data, $section, 'foia:RequestDispositionOrganizationAssociation', 'RD');
