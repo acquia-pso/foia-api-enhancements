@@ -367,7 +367,9 @@
               var totalCostsVal = Number($( totalCosts[j] ).val());
             }
           }
-          return this.optional(element) || Math.round( Number ( value ) * 10000 ) == Math.round( (totalFeesVal / totalCostsVal) * 10000 );
+
+          // The comparison assumes that the field value is already calculated as a percentage.
+          return this.optional(element) || Math.round( Number ( value ) * 100 ) == Math.round( (totalFeesVal / totalCostsVal) * 10000 );
         }
       }, "Must be equal to the Total Fees / Total Costs.");
 
