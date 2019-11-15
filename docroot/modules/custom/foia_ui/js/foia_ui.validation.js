@@ -1141,7 +1141,7 @@
       });
 
       // XII.C. FOIA Requests and Administrative Appeals
-      $("input[name*='field_foia_xiic']").filter("input[name*='field_num_days_1']").each(function() {
+      $("input[name*='field_foia_xiic']").filter("input[name*='[field_num_days_1]']").each(function() {
         $(this).rules( "add", {
           ifGreaterThanZeroComp: $("input[name*='field_foia_xiib']").filter("input[name*='field_pend_end_yr']"),
           messages: {
