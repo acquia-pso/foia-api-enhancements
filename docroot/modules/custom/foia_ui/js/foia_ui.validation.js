@@ -290,16 +290,6 @@
         return this.optional(element) || (value == Math.max.apply(null, valuesArray));
       }, "Must equal the highest value.");
 
-      // notAverageComp
-      jQuery.validator.addMethod("notAverageComp", function(value, element, params) {
-        var sum = 0;
-        for (var i = 0; i < params.length; i++){
-          sum += Number($( params[i] ).val());
-        }
-        var average = sum/params.length;
-        return this.optional(element) || !(value == average);
-      }, "Must not be equal to the average.");
-
       // isoDateFormattedOrNA
       jQuery.validator.addMethod('isoDateFormattedOrNA', function (value, element) {
         if (value.toLowerCase() === 'n/a' || value === '0') {
