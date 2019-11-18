@@ -731,10 +731,8 @@
       // VI.C.(4) - Agency Overall Median Number of Days
       $( "#edit-field-overall-vic4-med-num-days-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_admin_app_vic4']").filter("input[name*='field_med_num_days']"),
-        notAverageCompNA: $("input[name*='field_admin_app_vic4']").filter("input[name*='field_med_num_days']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageCompNA: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -789,10 +787,8 @@
       // VII.A. Simple - Agency Overall Median Number of Days
       $( "#edit-field-overall-viia-sim-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_proc_req_viia']").filter("input[name*='field_sim_med']"),
-        notAverageComp: $("input[name*='field_proc_req_viia']").filter("input[name*='field_sim_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -815,10 +811,8 @@
       // VII.A. Complex - Agency Overall Median Number of Days
       $( "#edit-field-overall-viia-comp-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_proc_req_viia']").filter("input[name*='field_comp_med']"),
-        notAverageComp: $("input[name*='field_proc_req_viia']").filter("input[name*='field_comp_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -841,10 +835,8 @@
       // VII.A. Expedited Processing - Agency Overall Median Number of Days
       $( "#edit-field-overall-viia-exp-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_proc_req_viia']").filter("input[name*='field_exp_med']"),
-        notAverageComp: $("input[name*='field_proc_req_viia']").filter("input[name*='field_exp_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -867,10 +859,8 @@
       // VII.B. Simple - Agency Overall Median Number of Days
       $( "#edit-field-overall-viib-sim-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_proc_req_viib']").filter("input[name*='field_sim_med']"),
-        notAverageComp: $("input[name*='field_proc_req_viib']").filter("input[name*='field_sim_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -893,10 +883,8 @@
       // VII.B. Complex - Agency Overall Median Number of Days
       $( "#edit-field-overall-viib-comp-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_proc_req_viib']").filter("input[name*='field_comp_med']"),
-        notAverageComp: $("input[name*='field_proc_req_viib']").filter("input[name*='field_comp_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -919,10 +907,8 @@
       // VII.B. Expedited Processing - Agency Overall Median Number of Days
       $( "#edit-field-overall-viib-exp-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_proc_req_viib']").filter("input[name*='field_exp_med']"),
-        notAverageComp: $("input[name*='field_proc_req_viib']").filter("input[name*='field_exp_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -967,10 +953,8 @@
       // VII.D. Simple - Agency Overall Median Number of Days
       $( "#edit-field-overall-viid-sim-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_pending_requests_vii_d_']").filter("input[name*='field_sim_med']"),
-        notAverageComp: $("input[name*='field_pending_requests_vii_d_']").filter("input[name*='field_sim_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -985,10 +969,8 @@
       // VII.D. Complex - Agency Overall Median Number of Days
       $( "#edit-field-overall-viid-comp-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_pending_requests_vii_d_']").filter("input[name*='field_comp_med']"),
-        notAverageComp: $("input[name*='field_pending_requests_vii_d_']").filter("input[name*='field_comp_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -1003,10 +985,8 @@
       // VII.D. Expedited - Agency Overall Median Number of Days
       $( "#edit-field-overall-viid-exp-med-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_pending_requests_vii_d_']").filter("input[name*='field_exp_med']"),
-        notAverageComp: $("input[name*='field_pending_requests_vii_d_']").filter("input[name*='field_exp_med']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -1043,10 +1023,8 @@
       // VIII.A. Agency Overall Median Number of Days to Adjudicate
       $( "#edit-field-overall-viiia-med-days-jud-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_req_viiia']").filter("input[name*='field_med_days_jud']"),
-        notAverageComp: $("input[name*='field_req_viiia']").filter("input[name*='field_med_days_jud']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
@@ -1064,10 +1042,8 @@
       // VIII.B. Agency Overall Median Number of Days to Adjudicate
       $( "#edit-field-overall-viiib-med-days-jud-0-value").rules( "add", {
         betweenMinMaxCompNA: $("input[name*='field_req_viiib']").filter("input[name*='field_med_days_jud']"),
-        notAverageComp: $("input[name*='field_req_viiib']").filter("input[name*='field_med_days_jud']"),
         messages: {
-          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days",
-          notAverageComp: "Warning: should not equal to the average Median Number of Days."
+          betweenMinMaxCompNA: "This field should be between the largest and smallest values of Median Number of Days"
         }
       });
 
